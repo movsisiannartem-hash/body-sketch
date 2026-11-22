@@ -43,11 +43,14 @@
   <!-- ==================== HERO SECTION (WELLNEST FULLSCREEN) ==================== -->
   <section class="hero-wellnest relative min-h-screen flex flex-col justify-between pt-5 sm:pt-7">
     
+    <!-- Cinematic Studio Background with subtle entrance zoom -->
+    <div class="hero-bg-media" aria-hidden="true"></div>
+
     <!-- Gradient Overlay: Rich Coffee-Charcoal tones for AAA contrast -->
     <div class="hero-gradient-overlay" aria-hidden="true"></div>
 
     <!-- ==================== 1. FLOATING HEADER ==================== -->
-    <header class="relative z-30 w-full max-w-screen-2xl mx-auto px-5 sm:px-8 lg:px-12 xl:px-16">
+    <header class="header-entrance relative z-30 w-full max-w-screen-2xl mx-auto px-5 sm:px-8 lg:px-12 xl:px-16">
       <div class="relative flex items-center justify-between gap-4">
         
         <!-- Logo: Authentic BODY SKETCH in Crisp White -->
@@ -55,7 +58,7 @@
           <img src="assets/logo_white.png" alt="BODY SKETCH" class="h-8 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]">
         </a>
 
-        <!-- Middle Navigation: 1:1 Replica of User Reference Pill -->
+        <!-- Middle Navigation: 1:1 Replica of User Reference Pill (Desktop: height 42px) -->
         <nav class="hidden lg:flex items-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 nav-pill-exact" aria-label="Основная навигация">
           <a href="#hero" class="nav-item active" onclick="setActiveNav(this)">Главная</a>
           <a href="#treatments" class="nav-item" onclick="setActiveNav(this)">Услуги</a>
@@ -64,25 +67,36 @@
           <a href="#contacts" class="nav-item" onclick="setActiveNav(this)">Контакты</a>
         </nav>
 
-        <!-- Right Side: Phone & Wellnest-style CTA (Photo 1: Only phone number, WhatsApp removed) -->
+        <!-- Right Side: Phone & Wellnest-style CTA / Mobile Hamburger -->
         <div class="flex items-center gap-4 sm:gap-6 flex-shrink-0 z-10">
           
-          <!-- Direct Phone Link: Pure phone number without extra icon or WhatsApp -->
+          <!-- Direct Phone Link (Desktop & Tablet) -->
           <a href="tel:+79277261412" 
              class="hidden sm:inline-block text-xs sm:text-sm font-semibold tracking-wide text-white/90 hover:text-white transition-colors"
              title="Позвонить в студию">
             +7 (927) 726-14-12
           </a>
 
-          <!-- Wellnest Pill Button: "Book Your Session ↗" (Nested circle arrow) -->
+          <!-- Wellnest Pill Button: Exact 42px height matching navigation pill (Desktop) -->
           <button onclick="openBookingModal()" 
-                  class="btn-wellnest-primary pl-4 sm:pl-5 pr-1.5 py-1.5 text-xs sm:text-sm font-semibold">
-            <span>Запись</span><span class="hidden sm:inline">&nbsp;онлайн</span>
-            <span class="arrow-circle w-7 h-7 sm:w-8 sm:h-8 ml-2 sm:ml-3 flex-shrink-0">
+                  class="btn-wellnest-primary btn-header-cta hidden lg:inline-flex items-center justify-between text-xs sm:text-sm font-semibold">
+            <span>Запись онлайн</span>
+            <span class="arrow-circle flex-shrink-0">
               <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M7 17L17 7M17 7H9M17 7V15" />
               </svg>
             </span>
+          </button>
+
+          <!-- Mobile Hamburger Menu Button (Replaces "Запись" on mobile screens) -->
+          <button id="mobileMenuBtn" onclick="toggleMobileMenu()" 
+                  class="btn-hamburger lg:hidden" 
+                  aria-label="Открыть мобильное меню" 
+                  aria-expanded="false" 
+                  aria-controls="mobileMenuDrawer">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+            <span class="bar bar-3"></span>
           </button>
 
         </div>
@@ -93,25 +107,25 @@
     <!-- ==================== 2. MAIN HERO CONTENT ==================== -->
     <div class="relative z-20 w-full max-w-screen-2xl mx-auto px-5 sm:px-8 lg:px-12 xl:px-16 py-8 sm:py-14 my-auto">
       
-      <!-- Left Side: Rhythmic Typography & Dual CTA (Photo 2: Floating card removed) -->
+      <!-- Left Side: Rhythmic Typography & Dual CTA -->
       <div class="max-w-2xl lg:max-w-3xl flex flex-col items-start space-y-6 sm:space-y-7">
 
-        <!-- Triple Headline: Feel Better. Move Freely. Live Pain-Free cadence -->
-        <h1 class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-[62px] text-white tracking-tight leading-[1.10]">
+        <!-- Triple Headline with Entrance Animation -->
+        <h1 class="hero-anim-1 font-heading font-extrabold text-3xl sm:text-5xl lg:text-[62px] text-white tracking-tight leading-[1.10]">
           Легкость в теле. <br>
           Тонус кожи. <br>
           <span class="text-white/90">Без боли и синяков.</span>
         </h1>
 
-        <!-- Shortened Description text -->
-        <p class="font-body text-sm sm:text-base lg:text-lg text-white/85 max-w-xl leading-relaxed">
+        <!-- Shortened Description text with Staggered Animation -->
+        <p class="hero-anim-2 font-body text-sm sm:text-base lg:text-lg text-white/85 max-w-xl leading-relaxed">
           Персональные программы аппаратного LPG- и Sketch-массажа в Самаре. Бережно моделируем силуэт и устраняем отеки без боли.
         </p>
 
-        <!-- Dual Pill CTA Buttons (Wellnest Style Photos 4 & 5) -->
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto pt-2">
+        <!-- Dual Pill CTA Buttons with Staggered Animation -->
+        <div class="hero-anim-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto pt-2">
           
-          <!-- Primary White Pill with Nested Dark Circle (Photo 4) -->
+          <!-- Primary White Pill with Nested Dark Circle -->
           <button onclick="openBookingModal()" 
                   class="btn-wellnest-primary pl-7 pr-2 sm:pr-2.5 py-2 sm:py-2.5 text-sm sm:text-base font-semibold">
             <span>Записаться на сеанс</span>
@@ -122,7 +136,7 @@
             </span>
           </button>
 
-          <!-- Secondary Outline Pill with Nested White Circle (Photo 5) -->
+          <!-- Secondary Outline Pill with Nested White Circle -->
           <button onclick="openInfoModal()" 
                   class="btn-wellnest-secondary pl-7 pr-2 sm:pr-2.5 py-2 sm:py-2.5 text-sm sm:text-base font-semibold">
             <span>О процедурах</span>
@@ -135,8 +149,8 @@
 
         </div>
 
-        <!-- Social Proof (Wellnest Style) -->
-        <div class="pt-4 flex flex-wrap items-center gap-4 sm:gap-6">
+        <!-- Social Proof with Staggered Animation -->
+        <div class="hero-anim-4 pt-4 flex flex-wrap items-center gap-4 sm:gap-6">
           
           <!-- 5.0 Rating Link -->
           <a href="https://yandex.ru/maps/org/body_sketch/102926992376/?ll=50.146303%2C53.198252&z=16" 
@@ -145,8 +159,8 @@
              class="flex items-center gap-2 text-white hover:text-white/90 transition-colors"
              title="Смотреть отзывы на Яндекс.Картах">
             
-            <!-- 5 Stars SVG in Gold -->
-            <div class="flex items-center text-brand-gold gap-0.5" aria-label="5 звезд">
+            <!-- 5 Stars SVG in Gold with Ambient Shimmer -->
+            <div class="stars-shimmer flex items-center text-brand-gold gap-0.5" aria-label="5 звезд">
               <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
               <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
               <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -180,6 +194,84 @@
     <div class="curved-bottom-bar-minimal w-full" aria-hidden="true"></div>
 
   </section>
+
+
+  <!-- ==================== MOBILE MENU DRAWER (Glassmorphic) ==================== -->
+  <div id="mobileMenuDrawer" class="fixed inset-0 z-40 hidden pointer-events-none" aria-hidden="true">
+    <!-- Backdrop Blur Overlay -->
+    <div id="mobileMenuBackdrop" onclick="closeMobileMenu()" class="absolute inset-0 bg-black/65 backdrop-blur-xl opacity-0 transition-opacity duration-300 pointer-events-auto"></div>
+
+    <!-- Slide-in Glass Menu Panel (88% width on phone for ambient depth, max 420px on tablet) -->
+    <aside class="relative z-10 w-[88%] sm:max-w-md h-full ml-auto bg-[#170E0A]/95 backdrop-blur-2xl border-l border-white/10 shadow-2xl flex flex-col justify-between p-6 sm:p-8 pointer-events-auto overflow-y-auto">
+      
+      <!-- Drawer Header -->
+      <div class="flex items-center justify-between pb-6 border-b border-white/10">
+        <a href="#" onclick="handleMobileNavClick(event, '#hero')" class="flex items-center gap-2">
+          <img src="assets/logo_white.png" alt="BODY SKETCH" class="h-8 w-auto object-contain">
+        </a>
+        <button onclick="closeMobileMenu()" 
+                class="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 text-white transition-colors" 
+                aria-label="Закрыть меню">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="flex flex-col space-y-2 py-6 my-auto" aria-label="Мобильная навигация">
+        <a href="#hero" onclick="handleMobileNavClick(event, '#hero')" class="mobile-nav-link text-xl font-heading font-semibold text-white/95 hover:text-white px-4 py-3.5 rounded-2xl hover:bg-white/10 transition-all flex items-center justify-between active:scale-[0.98]">
+          <span>Главная</span>
+          <span class="w-2 h-2 rounded-full bg-brand-gold opacity-90"></span>
+        </a>
+        <a href="#treatments" onclick="handleMobileNavClick(event, '#treatments')" class="mobile-nav-link text-xl font-heading font-semibold text-white/80 hover:text-white px-4 py-3.5 rounded-2xl hover:bg-white/10 transition-all flex items-center justify-between active:scale-[0.98]">
+          <span>Услуги</span>
+          <svg class="w-4 h-4 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#gallery" onclick="handleMobileNavClick(event, '#gallery')" class="mobile-nav-link text-xl font-heading font-semibold text-white/80 hover:text-white px-4 py-3.5 rounded-2xl hover:bg-white/10 transition-all flex items-center justify-between active:scale-[0.98]">
+          <span>Галерея</span>
+          <svg class="w-4 h-4 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#reviews" onclick="handleMobileNavClick(event, '#reviews')" class="mobile-nav-link text-xl font-heading font-semibold text-white/80 hover:text-white px-4 py-3.5 rounded-2xl hover:bg-white/10 transition-all flex items-center justify-between active:scale-[0.98]">
+          <span>Отзывы</span>
+          <svg class="w-4 h-4 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contacts" onclick="handleMobileNavClick(event, '#contacts')" class="mobile-nav-link text-xl font-heading font-semibold text-white/80 hover:text-white px-4 py-3.5 rounded-2xl hover:bg-white/10 transition-all flex items-center justify-between active:scale-[0.98]">
+          <span>Контакты</span>
+          <svg class="w-4 h-4 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </nav>
+
+      <!-- Drawer Footer: Big CTA Button & Studio Information -->
+      <div class="pt-6 border-t border-white/10 space-y-4">
+        <!-- Prominent Wellnest CTA Button -->
+        <button onclick="closeMobileMenu(); openBookingModal();" 
+                class="mobile-drawer-cta btn-wellnest-primary w-full pl-6 pr-2 py-2.5 text-base font-semibold shadow-xl active:scale-[0.98]">
+          <span>Записаться на сеанс</span>
+          <span class="arrow-circle w-9 h-9 ml-3 flex-shrink-0">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M7 17L17 7M17 7H9M17 7V15" />
+            </svg>
+          </span>
+        </button>
+
+        <!-- Direct Contact Info -->
+        <div class="mobile-drawer-footer flex items-center justify-between pt-1 text-xs text-white/75">
+          <a href="tel:+79277261412" class="font-semibold text-white hover:text-brand-gold transition-colors flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            +7 (927) 726-14-12
+          </a>
+          <span class="flex items-center gap-1 text-white/80">
+            <svg class="w-3 h-3 text-brand-gold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            5.0 • ул. Дачная, 26
+          </span>
+        </div>
+      </div>
+
+    </aside>
+  </div>
 
 
   <!-- ==================== MODAL 1: BOOKING MODAL ==================== -->
@@ -331,7 +423,11 @@
     function closeBookingModal() {
       const modal = document.getElementById('bookingModal');
       modal.classList.add('hidden');
-      document.body.style.overflow = '';
+      // Only restore scroll if mobile menu is not open
+      const drawer = document.getElementById('mobileMenuDrawer');
+      if (!drawer || !drawer.classList.contains('is-open')) {
+        document.body.style.overflow = '';
+      }
     }
 
     function openInfoModal() {
@@ -343,10 +439,13 @@
     function closeInfoModal() {
       const modal = document.getElementById('infoModal');
       modal.classList.add('hidden');
-      document.body.style.overflow = '';
+      const drawer = document.getElementById('mobileMenuDrawer');
+      if (!drawer || !drawer.classList.contains('is-open')) {
+        document.body.style.overflow = '';
+      }
     }
 
-    // Dynamic active navigation indicator
+    // Dynamic active navigation indicator (desktop)
     function setActiveNav(element) {
       document.querySelectorAll('.nav-pill-exact .nav-item').forEach(item => {
         item.classList.remove('active');
@@ -354,11 +453,68 @@
       element.classList.add('active');
     }
 
-    // Close modals on Escape key or outside click
+    // ==================== MOBILE DRAWER CONTROLS ====================
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileMenuDrawer');
+      if (drawer.classList.contains('is-open')) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    }
+
+    function openMobileMenu() {
+      const drawer = document.getElementById('mobileMenuDrawer');
+      const btn = document.getElementById('mobileMenuBtn');
+      drawer.classList.remove('hidden');
+      // force repaint
+      drawer.offsetHeight;
+      drawer.classList.add('is-open');
+      if (btn) {
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      const drawer = document.getElementById('mobileMenuDrawer');
+      const btn = document.getElementById('mobileMenuBtn');
+      drawer.classList.remove('is-open');
+      if (btn) {
+        btn.classList.remove('is-active');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        if (!drawer.classList.contains('is-open')) {
+          drawer.classList.add('hidden');
+        }
+      }, 350);
+    }
+
+    function handleMobileNavClick(event, targetId) {
+      closeMobileMenu();
+      const target = document.querySelector(targetId);
+      if (target) {
+        event.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Close modals & mobile menu on Escape key
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeBookingModal();
         closeInfoModal();
+        closeMobileMenu();
+      }
+    });
+
+    // Close mobile menu on resize to desktop (>= 1024px)
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024) {
+        closeMobileMenu();
       }
     });
 
@@ -371,5 +527,5 @@
     });
   </script>
 
-</body>
+<script>window.addEventListener("load", () => { const b = document.getElementById("mobileMenuBtn"); document.title = "###DEBUG### " + JSON.stringify({display: getComputedStyle(b).display, rect: b.getBoundingClientRect(), classes: b.className, winW: window.innerWidth}); });</script></body>
 </html>
