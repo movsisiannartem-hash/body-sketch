@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BODY SKETCH — Студия аппаратного массажа и коррекции фигуры в Самаре</title>
+  <meta name="description" content="Аппаратный LPG- и Sketch-массаж в Самаре на ул. Дачной, 26. Моделирование фигуры, лимфодренаж и подтяжка кожи без боли и синяков. Рейтинг 5.0 на Яндекс.Картах.">
+  
+  <!-- Local Tailwind Script for guaranteed offline rendering -->
+  <script src="assets/tailwind.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#FBF8F3',
+              card: '#FFFFFF',
+              border: '#EAE2D7',
+              espresso: '#20120D',
+              'espresso-hover': '#341D15',
+              'espresso-light': '#57301A',
+              text: '#231610',
+              muted: '#7A6B62',
+              sage: '#CBD7C7',
+              'sage-dark': '#274334',
+              gold: '#E5A93C'
+            }
+          },
+          fontFamily: {
+            heading: ['"Manrope"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            body: ['"Inter"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="bg-[#FBF8F3] text-brand-text min-h-screen flex flex-col selection:bg-brand-sage selection:text-brand-espresso overflow-x-hidden">
+
+  <!-- ==================== HERO SECTION (WELLNEST FULLSCREEN) ==================== -->
+  <section class="hero-wellnest relative min-h-screen flex flex-col justify-between pt-5 sm:pt-7">
+    
+    <!-- Gradient Overlay: Rich Coffee-Charcoal tones for AAA contrast -->
+    <div class="hero-gradient-overlay" aria-hidden="true"></div>
+
+    <!-- ==================== 1. FLOATING HEADER ==================== -->
+    <header class="relative z-30 w-full max-w-screen-2xl mx-auto px-5 sm:px-8 lg:px-12 xl:px-16">
+      <div class="relative flex items-center justify-between gap-4">
+        
+        <!-- Logo: Authentic BODY SKETCH in Crisp White -->
+        <a href="#" class="flex items-center gap-2 group focus:outline-none flex-shrink-0 z-10" aria-label="Body Sketch Самара — главная">
+          <img src="assets/logo_white.png" alt="BODY SKETCH" class="h-8 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]">
+        </a>
+
+        <!-- Middle Navigation: 1:1 Replica of User Reference Pill -->
+        <nav class="hidden lg:flex items-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 nav-pill-exact" aria-label="Основная навигация">
+          <a href="#hero" class="nav-item active" onclick="setActiveNav(this)">Главная</a>
+          <a href="#treatments" class="nav-item" onclick="setActiveNav(this)">Услуги</a>
+          <a href="#gallery" class="nav-item" onclick="setActiveNav(this)">Галерея</a>
+          <a href="#reviews" class="nav-item" onclick="setActiveNav(this)">Отзывы</a>
+          <a href="#contacts" class="nav-item" onclick="setActiveNav(this)">Контакты</a>
+        </nav>
+
+        <!-- Right Side: Phone & Wellnest-style CTA (Photo 1: Only phone number, WhatsApp removed) -->
+        <div class="flex items-center gap-4 sm:gap-6 flex-shrink-0 z-10">
+          
+          <!-- Direct Phone Link: Pure phone number without extra icon or WhatsApp -->
+          <a href="tel:+79277261412" 
+             class="hidden sm:inline-block text-xs sm:text-sm font-semibold tracking-wide text-white/90 hover:text-white transition-colors"
+             title="Позвонить в студию">
+            +7 (927) 726-14-12
+          </a>
+
+          <!-- Wellnest Pill Button: "Book Your Session ↗" (Nested circle arrow) -->
+          <button onclick="openBookingModal()" 
+                  class="btn-wellnest-primary pl-4 sm:pl-5 pr-1.5 py-1.5 text-xs sm:text-sm font-semibold">
+            <span>Запись</span><span class="hidden sm:inline">&nbsp;онлайн</span>
+            <span class="arrow-circle w-7 h-7 sm:w-8 sm:h-8 ml-2 sm:ml-3 flex-shrink-0">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M7 17L17 7M17 7H9M17 7V15" />
+              </svg>
+            </span>
+          </button>
+
+        </div>
+
+      </div>
+    </header>
+
+    <!-- ==================== 2. MAIN HERO CONTENT ==================== -->
+    <div class="relative z-20 w-full max-w-screen-2xl mx-auto px-5 sm:px-8 lg:px-12 xl:px-16 py-8 sm:py-14 my-auto">
+      
+      <!-- Left Side: Rhythmic Typography & Dual CTA (Photo 2: Floating card removed) -->
+      <div class="max-w-2xl lg:max-w-3xl flex flex-col items-start space-y-6 sm:space-y-7">
+
+        <!-- Triple Headline: Feel Better. Move Freely. Live Pain-Free cadence -->
+        <h1 class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-[62px] text-white tracking-tight leading-[1.10]">
+          Легкость в теле. <br>
+          Тонус кожи. <br>
+          <span class="text-white/90">Без боли и синяков.</span>
+        </h1>
+
+        <!-- Shortened Description text -->
+        <p class="font-body text-sm sm:text-base lg:text-lg text-white/85 max-w-xl leading-relaxed">
+          Персональные программы аппаратного LPG- и Sketch-массажа в Самаре. Бережно моделируем силуэт и устраняем отеки без боли.
+        </p>
+
+        <!-- Dual Pill CTA Buttons (Wellnest Style Photos 4 & 5) -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto pt-2">
+          
+          <!-- Primary White Pill with Nested Dark Circle (Photo 4) -->
+          <button onclick="openBookingModal()" 
+                  class="btn-wellnest-primary pl-7 pr-2 sm:pr-2.5 py-2 sm:py-2.5 text-sm sm:text-base font-semibold">
+            <span>Записаться на сеанс</span>
+            <span class="arrow-circle w-9 h-9 sm:w-10 sm:h-10 ml-4 flex-shrink-0">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M7 17L17 7M17 7H9M17 7V15" />
+              </svg>
+            </span>
+          </button>
+
+          <!-- Secondary Outline Pill with Nested White Circle (Photo 5) -->
+          <button onclick="openInfoModal()" 
+                  class="btn-wellnest-secondary pl-7 pr-2 sm:pr-2.5 py-2 sm:py-2.5 text-sm sm:text-base font-semibold">
+            <span>О процедурах</span>
+            <span class="arrow-circle w-9 h-9 sm:w-10 sm:h-10 ml-4 flex-shrink-0">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M7 17L17 7M17 7H9M17 7V15" />
+              </svg>
+            </span>
+          </button>
+
+        </div>
+
+        <!-- Social Proof (Wellnest Style) -->
+        <div class="pt-4 flex flex-wrap items-center gap-4 sm:gap-6">
+          
+          <!-- 5.0 Rating Link -->
+          <a href="https://yandex.ru/maps/org/body_sketch/102926992376/?ll=50.146303%2C53.198252&z=16" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="flex items-center gap-2 text-white hover:text-white/90 transition-colors"
+             title="Смотреть отзывы на Яндекс.Картах">
+            
+            <!-- 5 Stars SVG in Gold -->
+            <div class="flex items-center text-brand-gold gap-0.5" aria-label="5 звезд">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+
+            <div class="text-xs">
+              <span class="font-bold text-white">5.0</span>
+              <span class="text-white/70">на Яндекс.Картах</span>
+            </div>
+          </a>
+
+          <!-- Avatars Group -->
+          <div class="flex items-center gap-2">
+            <div class="flex -space-x-2 overflow-hidden">
+              <img class="inline-block h-7 w-7 rounded-full ring-2 ring-black/40 object-cover" src="assets/avatar1.jpg" alt="Клиент Body Sketch">
+              <img class="inline-block h-7 w-7 rounded-full ring-2 ring-black/40 object-cover" src="assets/avatar2.jpg" alt="Клиент Body Sketch">
+              <img class="inline-block h-7 w-7 rounded-full ring-2 ring-black/40 object-cover" src="assets/avatar3.jpg" alt="Клиент Body Sketch">
+            </div>
+            <span class="text-xs font-medium text-white/90">150+ реальных отзывов</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ==================== 3. WELLNEST CURVED BOTTOM TRANSITION (Photo 1: Text removed, sleek curve) ==================== -->
+    <div class="curved-bottom-bar-minimal w-full" aria-hidden="true"></div>
+
+  </section>
+
+
+  <!-- ==================== MODAL 1: BOOKING MODAL ==================== -->
+  <div id="bookingModal" class="fixed inset-0 z-50 hidden bg-brand-espresso/70 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl border border-brand-border animate-in fade-in zoom-in-95 duration-200">
+      
+      <!-- Close Button -->
+      <button onclick="closeBookingModal()" 
+              class="absolute top-5 right-5 text-brand-muted hover:text-brand-espresso p-1.5 rounded-full hover:bg-brand-bg transition-colors"
+              aria-label="Закрыть окно">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Modal Content -->
+      <div class="text-center mb-6">
+        <div class="inline-flex p-3 rounded-2xl bg-brand-bg text-brand-espresso mb-3 border border-brand-border">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-xl text-brand-espresso">Запись на сеанс в Body Sketch</h3>
+        <p class="text-xs text-brand-muted mt-1">г. Самара, ул. Дачная, 26 • Ежедневно 09:00 — 21:00</p>
+      </div>
+
+      <!-- Action Options -->
+      <div class="space-y-3">
+        <!-- Direct Yandex / YClients Button -->
+        <a href="https://yandex.ru/maps/org/body_sketch/102926992376/?ll=50.146303%2C53.198252&z=16" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="w-full py-3.5 px-5 rounded-2xl bg-brand-espresso hover:bg-brand-espresso-hover text-white transition-all flex items-center justify-between font-semibold text-sm shadow-md">
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+            <span>Онлайн-запись (Яндекс / YClients)</span>
+          </div>
+          <svg class="w-4 h-4 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+
+        <!-- WhatsApp Direct -->
+        <a href="https://wa.me/79277261412?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%81%D0%B5%D0%B0%D0%BD%D1%81%20%D0%B2%20Body%20Sketch" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="w-full py-3.5 px-5 rounded-2xl border border-brand-border hover:bg-brand-bg transition-colors flex items-center justify-between font-semibold text-sm text-brand-espresso">
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 fill-current text-green-600" viewBox="0 0 24 24">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.074-2.002-.468-1.583-.658-2.614-2.28-2.693-2.387-.079-.107-.638-.85-.638-1.622 0-.772.404-1.15.548-1.306.144-.155.312-.195.416-.195.104 0 .208.002.299.006.095.004.221-.036.346.264.129.312.441 1.077.479 1.156.038.079.063.172.012.276-.051.104-.077.169-.153.259-.076.09-.16.2-.228.269-.077.077-.157.161-.068.314.09.153.399.658.855 1.064.588.523 1.083.686 1.238.763.155.077.246.068.337-.037.091-.105.389-.452.493-.607.104-.155.208-.13.346-.078.138.052.88.415 1.032.492.152.077.253.115.29.179.037.064.037.373-.107.778zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.436 5.176L2 22l4.957-1.399C8.423 21.493 10.153 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+            </svg>
+            <span>Написать в WhatsApp</span>
+          </div>
+          <span class="text-xs text-brand-muted">Отвечаем за 3 мин</span>
+        </a>
+
+        <!-- Call Phone Direct -->
+        <a href="tel:+79277261412" 
+           class="w-full py-3 px-5 rounded-2xl border border-transparent hover:bg-brand-bg transition-colors flex items-center justify-between text-xs text-brand-muted">
+          <span>Либо позвоните нам по телефону:</span>
+          <span class="font-bold text-brand-espresso">+7 (927) 726-14-12</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ==================== MODAL 2: ABOUT PROCEDURE ==================== -->
+  <div id="infoModal" class="fixed inset-0 z-50 hidden bg-brand-espresso/70 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl border border-brand-border animate-in fade-in zoom-in-95 duration-200">
+      
+      <!-- Close Button -->
+      <button onclick="closeInfoModal()" 
+              class="absolute top-5 right-5 text-brand-muted hover:text-brand-espresso p-1.5 rounded-full hover:bg-brand-bg transition-colors"
+              aria-label="Закрыть окно">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <div class="mb-5">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-sage/40 text-brand-sage-dark text-xs font-semibold uppercase mb-2">
+          О технологии
+        </div>
+        <h3 class="font-heading font-bold text-xl sm:text-2xl text-brand-espresso">Как проходит аппаратный массаж</h3>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-brand-muted">
+        <div class="flex items-start gap-3">
+          <div class="w-6 h-6 rounded-full bg-brand-bg border border-brand-border text-brand-espresso font-bold flex items-center justify-center text-xs flex-shrink-0 mt-0.5">1</div>
+          <div>
+            <h4 class="font-semibold text-brand-espresso">Консультация и замер параметров</h4>
+            <p class="mt-0.5">Мастер определяет проблемные зоны, измеряет исходные объемы и уточняет пожелания.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="w-6 h-6 rounded-full bg-brand-bg border border-brand-border text-brand-espresso font-bold flex items-center justify-center text-xs flex-shrink-0 mt-0.5">2</div>
+          <div>
+            <h4 class="font-semibold text-brand-espresso">Индивидуальный эластичный костюм</h4>
+            <p class="mt-0.5">Обеспечивает гигиену, плавное скольжение манипулы и защиту сосудов. Костюм есть в студии.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="w-6 h-6 rounded-full bg-brand-bg border border-brand-border text-brand-espresso font-bold flex items-center justify-center text-xs flex-shrink-0 mt-0.5">3</div>
+          <div>
+            <h4 class="font-semibold text-brand-espresso">Бережная проработка без боли</h4>
+            <p class="mt-0.5">Мощность вакуума и роликов настраивается персонально. Никаких синяков и гематом.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="w-6 h-6 rounded-full bg-brand-bg border border-brand-border text-brand-espresso font-bold flex items-center justify-center text-xs flex-shrink-0 mt-0.5">4</div>
+          <div>
+            <h4 class="font-semibold text-brand-espresso">Рекомендации и чашка теплого чая</h4>
+            <p class="mt-0.5">После 45 минут сеанса запускается активный лимфодренаж. Вы чувствуете легкость сразу.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 pt-5 border-t border-brand-border flex items-center justify-between">
+        <span class="text-xs text-brand-muted">Длительность сеанса: <strong class="text-brand-espresso">45 минут</strong></span>
+        <button onclick="closeInfoModal(); openBookingModal();" class="btn-wellnest-primary pl-5 pr-2 py-2 text-xs font-semibold">
+          <span>Записаться</span>
+          <span class="arrow-circle w-7 h-7 ml-2">
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M7 17L17 7M17 7H9M17 7V15" />
+            </svg>
+          </span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ==================== JS INTERACTIONS ==================== -->
+  <script>
+    function openBookingModal() {
+      const modal = document.getElementById('bookingModal');
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBookingModal() {
+      const modal = document.getElementById('bookingModal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function openInfoModal() {
+      const modal = document.getElementById('infoModal');
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeInfoModal() {
+      const modal = document.getElementById('infoModal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    // Dynamic active navigation indicator
+    function setActiveNav(element) {
+      document.querySelectorAll('.nav-pill-exact .nav-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      element.classList.add('active');
+    }
+
+    // Close modals on Escape key or outside click
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeBookingModal();
+        closeInfoModal();
+      }
+    });
+
+    document.getElementById('bookingModal').addEventListener('click', (e) => {
+      if (e.target.id === 'bookingModal') closeBookingModal();
+    });
+
+    document.getElementById('infoModal').addEventListener('click', (e) => {
+      if (e.target.id === 'infoModal') closeInfoModal();
+    });
+  </script>
+
+</body>
+</html>

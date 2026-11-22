@@ -1,0 +1,264 @@
+/* Local typography definitions for guaranteed offline & cross-platform consistency */
+@font-face {
+  font-family: 'Manrope';
+  src: url('fonts/Manrope-Bold.ttf') format('truetype');
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter.ttf') format('truetype');
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+/* Design tokens for Body Sketch (Wellnest Edition) */
+:root {
+  --color-bg-light: #FBF8F3;
+  --color-card-bg: #FFFFFF;
+  --color-card-border: #EAE2D7;
+  --color-espresso: #20120D;
+  --color-espresso-hover: #341D15;
+  --color-espresso-light: #57301A;
+  --color-text-main: #231610;
+  --color-text-muted: #7A6B62;
+  --color-sage: #CBD7C7;
+  --color-sage-dark: #274334;
+  --color-gold: #E5A93C;
+  --font-heading: 'Manrope', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-main);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.025em;
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Fullscreen Hero Background with Cinematic Gradient */
+.hero-wellnest {
+  position: relative;
+  background-image: url('body-sketch-real.jpg');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 1024px) {
+  .hero-wellnest {
+    background-position: 72% center;
+  }
+}
+
+/* Gradient Overlay: Deep rich warm coffee tones on left, transparent on right */
+.hero-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg, 
+    rgba(18, 10, 6, 0.94) 0%, 
+    rgba(18, 10, 6, 0.84) 38%, 
+    rgba(18, 10, 6, 0.48) 68%, 
+    rgba(18, 10, 6, 0.18) 100%
+  );
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .hero-gradient-overlay {
+    background: linear-gradient(
+      180deg, 
+      rgba(18, 10, 6, 0.88) 0%, 
+      rgba(18, 10, 6, 0.72) 50%, 
+      rgba(18, 10, 6, 0.94) 100%
+    );
+  }
+}
+
+/* Compact Seamless Glass Navigation Pill (No white border, understated) */
+.nav-pill-exact {
+  background: rgba(242, 234, 226, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 9999px;
+  padding: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.nav-pill-exact .nav-item {
+  color: #2D231C;
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 5px 13px;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.nav-pill-exact .nav-item:hover {
+  color: #000000;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.nav-pill-exact .nav-item.active {
+  background: rgba(255, 255, 255, 0.88);
+  color: #140F0B;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Glassmorphism components in Wellnest Style */
+.glass-nav-pill {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.glass-nav-pill a {
+  color: rgba(255, 255, 255, 0.85);
+  transition: all 0.2s ease;
+}
+
+.glass-nav-pill a:hover {
+  color: #FFFFFF;
+}
+
+/* Floating Interactive Card (Right side of Wellnest Hero) */
+.glass-card-wellnest {
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
+  color: #FFFFFF;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-wellnest:hover {
+  background: rgba(255, 255, 255, 0.20);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Curved Bottom Transition Bar (Wellnest signature) - Minimal, no text */
+.curved-bottom-bar-minimal {
+  background-color: var(--color-bg-light);
+  border-top-left-radius: 36px;
+  border-top-right-radius: 36px;
+  box-shadow: 0 -12px 30px -5px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 20;
+  height: 32px;
+}
+
+@media (min-width: 768px) {
+  .curved-bottom-bar-minimal {
+    border-top-left-radius: 56px;
+    border-top-right-radius: 56px;
+    height: 44px;
+  }
+}
+
+/* Wellnest Signature Buttons with Nested Circle Arrow */
+.btn-wellnest-primary {
+  background-color: #FFFFFF;
+  color: var(--color-espresso);
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 9999px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-wellnest-primary:hover {
+  background-color: #F8F5F0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.3);
+}
+
+.btn-wellnest-primary .arrow-circle {
+  background-color: var(--color-espresso);
+  color: #FFFFFF;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+
+.btn-wellnest-primary:hover .arrow-circle {
+  transform: scale(1.05) translate(1px, -1px);
+}
+
+/* Secondary Outline Button with Nested White Circle */
+.btn-wellnest-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 9999px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-wellnest-secondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-wellnest-secondary .arrow-circle {
+  background-color: #FFFFFF;
+  color: var(--color-espresso);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+
+.btn-wellnest-secondary:hover .arrow-circle {
+  transform: scale(1.05) translate(1px, -1px);
+}
+
+/* Accessible focus outlines */
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid #FFFFFF;
+  outline-offset: 3px;
+}
+
+/* Smooth motion with reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
