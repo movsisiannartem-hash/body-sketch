@@ -71,7 +71,8 @@ body {
 
 @media (max-width: 1024px) {
   .hero-bg-media {
-    background-position: 72% center;
+    background-image: url('body-sketch-mobile.jpg');
+    background-position: center center;
   }
 }
 
